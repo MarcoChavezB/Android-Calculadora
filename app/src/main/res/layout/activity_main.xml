@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#1b1d20">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#282828">
+
+        <TextView
+            android:id="@+id/mensajes"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="-----"
+            android:textColor="#b6b724"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="@drawable/rounder_bottom_border"
+>
+
+        </TextView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="#282828">
+
+            <TextView
+                android:id="@+id/resultado"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:gravity="bottom|end"
+                android:textSize="40sp"
+                android:textColor="#f4ab42">
+            </TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal"
+            android:background="#282828">
+
+            <TextView
+                android:id="@+id/preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|end"
+                android:text=""
+                android:textColor="#a38741"
+                android:textSize="26sp">
+            </TextView>
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/path"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            style="@style/borderConstraint"
+            android:background="@drawable/rounder_top_border"
+
+            >
+
+            <Button
+            android:id="@+id/cero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/path"
+            app:layout_constraintStart_toStartOf="@id/dos"
+            app:layout_constraintTop_toBottomOf="@id/dos"
+            app:layout_constraintEnd_toStartOf="@id/punto"
+            style="@style/Widget.MaterialComponents.Slider"
+            android:textSize="20sp"
+            android:textColor="#FFFF">
+        </Button>
+
+
+            <Button
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inf"
+                app:layout_constraintTop_toBottomOf="@id/uno"
+                app:layout_constraintStart_toStartOf="@id/path"
+                app:layout_constraintBottom_toBottomOf="@id/path"
+                app:layout_constraintEnd_toStartOf="@id/cero"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textSize="20sp"
+                android:textColor="#FFFF">
+            </Button>
+
+
+            <Button
+                android:id="@+id/punto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="."
+                app:layout_constraintStart_toEndOf="@id/cero"
+                app:layout_constraintBottom_toBottomOf="@id/path"
+                app:layout_constraintEnd_toStartOf="@id/igual"
+                app:layout_constraintTop_toBottomOf="@id/tres"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textSize="28sp"
+                android:textColor="#FFFF"
+                android:backgroundTint="#1b1d20"
+                >
+            </Button>
+
+
+
+            <Button
+                android:id="@+id/uno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                app:layout_constraintBottom_toTopOf="@+id/cero"
+                app:layout_constraintTop_toBottomOf="@id/cuatro"
+                app:layout_constraintStart_toStartOf="@id/path"
+                app:layout_constraintEnd_toStartOf="@id/dos"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textColor="#FFFF"
+                android:textSize="20sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/cuatro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                app:layout_constraintBottom_toTopOf="@id/uno"
+                app:layout_constraintTop_toBottomOf="@id/siete"
+                app:layout_constraintStart_toStartOf="@id/path"
+                app:layout_constraintEnd_toStartOf="@id/cinco"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textColor="#FFFF"
+                android:textSize="20sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/siete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7"
+                app:layout_constraintTop_toBottomOf="@id/clear"
+                app:layout_constraintStart_toStartOf="@id/path"
+                app:layout_constraintBottom_toTopOf="@id/cuatro"
+                app:layout_constraintEnd_toStartOf="@id/ocho"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textColor="#FFFF"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C"
+                app:layout_constraintStart_toStartOf="@id/path"
+                app:layout_constraintTop_toTopOf="@id/path"
+                app:layout_constraintBottom_toTopOf="@id/siete"
+                app:layout_constraintEnd_toStartOf="@id/clearOne"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textSize="28sp"
+                android:textColor="#692c2c"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/cinco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                app:layout_constraintStart_toEndOf="@id/cuatro"
+                app:layout_constraintBottom_toTopOf="@id/dos"
+                app:layout_constraintTop_toBottomOf="@id/ocho"
+                app:layout_constraintEnd_toStartOf="@id/seis"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textColor="#FFFF"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/ocho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8"
+                app:layout_constraintBottom_toTopOf="@id/cinco"
+                app:layout_constraintStart_toEndOf="@id/siete"
+                app:layout_constraintTop_toBottomOf="@id/porcentaje"
+                app:layout_constraintEnd_toStartOf="@id/nueve"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textColor="#FFFF"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/porcentaje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                app:layout_constraintStart_toEndOf="@id/clearOne"
+                app:layout_constraintBottom_toTopOf="@id/nueve"
+                app:layout_constraintTop_toTopOf="@id/path"
+                app:layout_constraintEnd_toStartOf="@id/divicion"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textColor="#FFFF">
+            </Button>
+
+            <Button
+                android:id="@+id/tres"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textColor="#FFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/punto"
+                app:layout_constraintEnd_toStartOf="@id/suma"
+                app:layout_constraintStart_toEndOf="@id/dos"
+                app:layout_constraintTop_toBottomOf="@id/seis">
+
+            </Button>
+
+            <Button
+                android:id="@+id/seis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                app:layout_constraintBottom_toTopOf="@id/tres"
+                app:layout_constraintStart_toEndOf="@id/cinco"
+                app:layout_constraintTop_toBottomOf="@id/nueve"
+                app:layout_constraintEnd_toStartOf="@id/resta"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textColor="#FFFF"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/nueve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9"
+                app:layout_constraintBottom_toTopOf="@id/seis"
+                app:layout_constraintStart_toEndOf="@id/ocho"
+                app:layout_constraintTop_toBottomOf="@id/clearOne"
+                app:layout_constraintEnd_toStartOf="@id/multiplicar"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textColor="#FFFF"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/clearOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CE"
+                app:layout_constraintStart_toEndOf="@id/clear"
+                app:layout_constraintBottom_toTopOf="@id/ocho"
+                app:layout_constraintTop_toTopOf="@id/path"
+                app:layout_constraintEnd_toStartOf="@id/porcentaje"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textSize="28sp"
+                android:textColor="#692c2c"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/divicion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                app:layout_constraintStart_toEndOf="@id/porcentaje"
+                app:layout_constraintTop_toTopOf="@id/path"
+                app:layout_constraintEnd_toEndOf="@id/path"
+                app:layout_constraintBottom_toTopOf="@id/multiplicar"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textSize="24sp"
+                android:textColor="#FFFF">
+
+
+            </Button>
+
+            <Button
+                android:id="@+id/multiplicar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                app:layout_constraintStart_toEndOf="@id/nueve"
+                app:layout_constraintTop_toBottomOf="@id/divicion"
+                app:layout_constraintEnd_toEndOf="@id/path"
+                app:layout_constraintBottom_toTopOf="@id/resta"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textSize="20sp"
+                android:textColor="#FFFF"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/resta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                app:layout_constraintStart_toEndOf="@id/seis"
+                app:layout_constraintTop_toBottomOf="@id/multiplicar"
+                app:layout_constraintEnd_toEndOf="@id/path"
+                app:layout_constraintBottom_toTopOf="@id/suma"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textSize="28sp"
+                android:textColor="#FFFF"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/suma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                app:layout_constraintTop_toBottomOf="@id/resta"
+                app:layout_constraintStart_toEndOf="@id/tres"
+                app:layout_constraintEnd_toEndOf="@id/path"
+                app:layout_constraintBottom_toTopOf="@id/igual"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textSize="28sp"
+                android:textColor="#FFFF"
+                >
+            </Button>
+            <Button
+                android:id="@+id/igual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                app:layout_constraintTop_toBottomOf="@id/suma"
+                app:layout_constraintStart_toEndOf="@id/punto"
+                app:layout_constraintBottom_toBottomOf="@id/path"
+                app:layout_constraintEnd_toEndOf="@id/path"
+                android:textSize="28sp"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textColor="#b8bb26"
+
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/dos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                app:layout_constraintStart_toEndOf="@id/uno"
+                app:layout_constraintBottom_toTopOf="@id/cero"
+                app:layout_constraintTop_toBottomOf="@id/cinco"
+                app:layout_constraintEnd_toStartOf="@id/tres"
+                style="@style/Widget.MaterialComponents.Slider"
+                android:textSize="20sp"
+                android:textColor="#FFFF"
+                >
+            </Button>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
